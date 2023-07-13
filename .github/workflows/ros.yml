@@ -15,8 +15,10 @@ jobs:
     container: osrf/ros:${{ matrix.release }}-desktop
     steps:
       - uses: actions/checkout@v3
-      - name: Checkout submodules
-        run: git submodule update --init
+        with:
+          submodules: recursive
+      - name: Install dependencies
+        run: apt-get update && apt-get install --no-install-recommends -y  ros-${ROS_DISTRO}-navigation2  ros-${ROS_DISTRO}-nav2-bringup  ros-${ROS_DISTRO}-pcl-conversions
       - name: Run colcon
         run: source /opt/ros/${{ matrix.release }}/setup.bash && colcon build --event-handlers console_direct+
         shell: bash
