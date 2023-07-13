@@ -17,3 +17,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     ros-humble-navigation2 \
     ros-humble-nav2-bringup 
     # && rm -rf /var/lib/apt/lists/*
+
+# Setup workdir and entrypoint
+WORKDIR /home/$USER_NAME/ros_ws
+CMD ["bash", "--login"]
