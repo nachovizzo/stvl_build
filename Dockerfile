@@ -18,6 +18,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     ros-humble-nav2-bringup 
     # && rm -rf /var/lib/apt/lists/*
 
+
 # Setup workdir and entrypoint
+RUN echo "export HISTFILE=/home/$USER_NAME/ros_ws/.bash_history" >> /home/$USER_NAME/.bashrc
 WORKDIR /home/$USER_NAME/ros_ws
 CMD ["bash", "--login"]
+
