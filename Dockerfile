@@ -19,9 +19,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 
 # Nav2 and PCL Conversions
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    ros-humble-navigation2 \
-    ros-humble-nav2-bringup \
-    ros-humble-pcl-conversions \
+    ros-${ROS_DISTRO}-navigation2 \
+    ros-${ROS_DISTRO}-nav2-bringup \
+    ros-${ROS_DISTRO}-pcl-conversions \
     && rm -rf /var/lib/apt/lists/*
 
 # Setup workdir and entrypoint

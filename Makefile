@@ -1,11 +1,17 @@
-build:
-	docker compose run stvl colcon build --event-handlers console_direct+
+humble:
+	docker compose run $@ colcon build --event-handlers console_direct+
 
-docker:
-	docker compose build stvl
+iron:
+	docker compose run $@ colcon build --event-handlers console_direct+
 
-run:
-	docker compose run stvl
+dockers:
+	docker compose build humble
+
+humble-run:
+	docker compose run humble
+
+iron-run:
+	docker compose iron humble
 
 clean:
 	git clean -xff .
