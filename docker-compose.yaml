@@ -1,8 +1,11 @@
 version: "3.0"
 services:
-  ros:
+  stvl:
     image: stvl_build:latest
-    user: ${USER_NAME:-user}
+    build: .
+    user: user
+    stdin_open: True
+    tty: True
     network_mode: "host"
     environment:
       - DISPLAY=$DISPLAY
