@@ -15,7 +15,8 @@ RUN addgroup --gid $GROUP_ID $USER_NAME \
 # Nav2
 RUN apt-get update && apt-get install --no-install-recommends -y \
     ros-humble-navigation2 \
-    ros-humble-nav2-bringup 
+    ros-humble-nav2-bringup \
+    libpcl-conversions-dev
     # && rm -rf /var/lib/apt/lists/*
 
 
