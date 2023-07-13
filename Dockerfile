@@ -1,4 +1,5 @@
-FROM ros:humble
+ARG ROS_DISTRO
+FROM ros:${ROS_DISTRO}
 LABEL maintainer="Ignacio Vizzo <ignaciovizzo@gmail.com>"
 ENV USER_NAME="user"
 ENV GROUP_ID=1000
