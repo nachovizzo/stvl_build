@@ -15,6 +15,8 @@ jobs:
     container: osrf/ros:${{ matrix.release }}-desktop
     steps:
       - uses: actions/checkout@v3
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
       - name: Run colcon
         run: source /opt/ros/${{ matrix.release }}/setup.bash && colcon build --event-handlers console_direct+
         shell: bash
