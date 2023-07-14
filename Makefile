@@ -12,7 +12,7 @@ humble-run:
 	docker compose run humble
 
 iron-run:
-	docker compose iron humble
+	docker compose run iron
 
 clean:
 	git clean -xff .
